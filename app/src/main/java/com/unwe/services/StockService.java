@@ -1,6 +1,7 @@
 package com.unwe.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,10 @@ public class StockService {
         return (List<Stock>) stockRepository.findAll();
     }
 
+    public Optional<Stock> fetchStockbyDate(Long id) {
+        return stockRepository.findById(id);
+    }
+
     public Stock updateStock(Stock stk) {
         Stock tem = stockRepository.findById(stk.getId()).get();
         if (tem.getTextTitle() != stk.getTextTitle()) {
@@ -30,7 +35,9 @@ public class StockService {
         if (tem.getAmountEnter() != stk.getAmountEnter()) {
             tem.setAmountEnter(stk.getAmountEnter());
         }
-        System.out.println(tem.getAmountEnter());
+        if (tem.getExchangeDate() != stk.getExchangeDate()) {
+            tem.setExchangeDate(stk.getExchangeDate());
+        }
         return stockRepository.save(stk);
     }
 
