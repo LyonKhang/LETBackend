@@ -29,15 +29,9 @@ public class StockService {
 
     public Stock updateStock(Stock stk) {
         Stock tem = stockRepository.findById(stk.getId()).get();
-        if (tem.getTextTitle() != stk.getTextTitle()) {
-            tem.setTextTitle(stk.getTextTitle());
-        }
-        if (tem.getAmountEnter() != stk.getAmountEnter()) {
-            tem.setAmountEnter(stk.getAmountEnter());
-        }
-        if (tem.getExchangeDate() != stk.getExchangeDate()) {
-            tem.setExchangeDate(stk.getExchangeDate());
-        }
+        tem.setTextTitle(stk.getTextTitle());
+        tem.setAmountEnter(stk.getAmountEnter());
+        tem.setExchangeDate(stk.getExchangeDate());
         return stockRepository.save(stk);
     }
 

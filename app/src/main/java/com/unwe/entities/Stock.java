@@ -23,7 +23,7 @@ public class Stock {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String textTitle;
-    private int amountEnter;
+    private double amountEnter;
     @JsonFormat(pattern = "MM-dd-yyyy")
     private LocalDate exchangeDate;
 
