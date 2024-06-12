@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-App<app>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.unwe.App",
+      "projectName": "app",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-App<unwe>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.unwe.App",
+      "projectName": "unwe",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
