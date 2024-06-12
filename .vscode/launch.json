@@ -19,6 +19,16 @@
       "projectName": "unwe",
       "args": "",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-App<LET>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.unwe.App",
+      "projectName": "LET",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
 }
