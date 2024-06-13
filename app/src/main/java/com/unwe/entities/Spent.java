@@ -12,23 +12,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Stock {
+public class Spent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String textTitle;
     private double amountEnter;
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
     @JsonFormat(pattern = "MM-dd-yyyy")
     private LocalDate exchangeDate;
 

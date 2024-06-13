@@ -3,7 +3,6 @@ package com.unwe.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.unwe.entities.Category;
@@ -35,7 +34,7 @@ public class CategoryController {
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
-    @GetMapping("/getstocks")
+    @GetMapping("/getcategory")
     public List<Category> getCategory() {
         System.out.println("get Category");
         return categoryservice.getCategories();
