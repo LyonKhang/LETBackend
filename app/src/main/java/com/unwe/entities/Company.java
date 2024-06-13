@@ -18,7 +18,7 @@ public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String Companyname;
+    private String companyname;
     @NotBlank
     @Size(min = 10, max = 50)
     private String email;
