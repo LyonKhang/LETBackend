@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.unwe.entities.Stock;
 import com.unwe.services.StockService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping("/stocks")
+@RequiredArgsConstructor
 public class StockController {
     @Autowired
     private StockService stockservice;

@@ -22,8 +22,8 @@ public class CategoryService {
         return (List<Category>) categoryRepository.findAll();
     }
 
-    public void addNewCategory(Category category) {
-        categoryRepository.save(category);
+    public Category saveCategory(Category category) {
+        return categoryRepository.save(category);
     }
 
     // GET
@@ -34,9 +34,15 @@ public class CategoryService {
 
     // PUT
     @Transactional
-    public ResponseEntity<Category> updateCategory() {
-        return null;
+    public ResponseEntity<Category> updateCategory(String CurrentCategoryName, Category category) {
+        Optional<Category> tem = categoryRepository.findCategoryByName(CurrentCategoryName);
+        tem.get().setName(category.getName());
+        Category updatedCategory = categoryRepository.save(tem.get());
+        return ResponseEntity.ok(updatedCategory);
     }
-    // DELETE
 
+    // DELETE
+    public void deleteStockById(Long id) {
+        categoryRepository.deleteById(id);
+    }
 }
