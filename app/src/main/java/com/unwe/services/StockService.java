@@ -32,6 +32,7 @@ public class StockService {
         tem.setTextTitle(stk.getTextTitle());
         tem.setAmountEnter(stk.getAmountEnter());
         tem.setExchangeDate(stk.getExchangeDate());
+        tem.setCategory(stk.getCategory());
         return stockRepository.save(stk);
     }
 
