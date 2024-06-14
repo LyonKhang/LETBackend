@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.unwe.entities.Spent;
 
 @Repository
+
 public interface SpentRepository extends JpaRepository<Spent, Long> {
 
 }

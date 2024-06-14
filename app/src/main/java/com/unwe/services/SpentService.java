@@ -38,4 +38,5 @@ public class SpentService {
     public void deleteSpentById(Long id) {
         spentRepository.deleteById(id);
     }
+
 }
