@@ -30,8 +30,7 @@ public class SpentService {
     public Spent updateSpent(Spent stk) {
         Spent tem = spentRepository.findById(stk.getId()).get();
         tem.setTextTitle(stk.getTextTitle());
-        tem.setAmountEnter(stk.getAmountEnter());
-        tem.setExchangeDate(stk.getExchangeDate());
+        tem.setLocation(stk.getLocation());
         return spentRepository.save(stk);
     }
 

@@ -40,7 +40,7 @@ public class SpentController {
     @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PutMapping("/editspent")
     public Spent editspent(@RequestBody Spent stk) {
-        System.out.println("edit spent " + stk.getAmountEnter());
+        System.out.println("edit spent " + stk.getLocation());
         return spentservice.updateSpent(stk);
     }
 

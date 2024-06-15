@@ -27,4 +27,6 @@ public class Transaction {
     private LocalDate exchangeDate;
     @OneToOne(cascade = CascadeType.ALL)
     private Company company;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Spent spent;
 }

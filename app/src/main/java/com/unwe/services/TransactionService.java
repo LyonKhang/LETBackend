@@ -32,6 +32,7 @@ public class TransactionService {
         tem.setAmountEnter(tsn.getAmountEnter());
         tem.setExchangeDate(tsn.getExchangeDate());
         tem.setCompany(tsn.getCompany());
+        tem.setSpent(tsn.getSpent());
         return transactionRepository.save(tsn);
     }
 
