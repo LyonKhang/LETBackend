@@ -14,41 +14,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unwe.entities.Stock;
-import com.unwe.services.StockService;
+import com.unwe.entities.Spent;
+import com.unwe.services.SpentService;
 
 @RestController
-@RequestMapping("/stocks")
-public class StockController {
+@RequestMapping("/spents")
+public class SpentController {
     @Autowired
-    private StockService stockservice;
+    private SpentService spentservice;
 
-    @PostMapping(value = "/newstocks")
+    @PostMapping(value = "/newspents")
     @CrossOrigin
-    public Stock addStock(@RequestBody Stock stk) {
-        System.out.println("new stock " + stk.getId());
-        return stockservice.saveStock(stk);
+    public Spent addSpent(@RequestBody Spent stk) {
+        System.out.println("new spent " + stk.getTextTitle());
+        return spentservice.saveSpent(stk);
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
-    @GetMapping("/getstocks")
-    public List<Stock> getStock() {
-        System.out.println("get stock");
-        return stockservice.fetchStock();
+    @GetMapping("/getspents")
+    public List<Spent> getSpent() {
+        System.out.println("get spent");
+        return spentservice.fetchSpent();
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
-    @PutMapping("/editstock")
-    public Stock editstock(@RequestBody Stock stk) {
-        System.out.println("edit stock " + stk.getAmountEnter());
-        return stockservice.updateStock(stk);
+    @PutMapping("/editspent")
+    public Spent editspent(@RequestBody Spent stk) {
+        System.out.println("edit spent " + stk.getLocation());
+        return spentservice.updateSpent(stk);
     }
 
     @CrossOrigin(origins = "http://127.0.0.1:5500")
-    @DeleteMapping("/deletestock/{id}")
-    public void deletestock(@PathVariable Long id) {
-        System.out.println("delete stock " + id);
-        stockservice.deleteStockById(id);
+    @DeleteMapping("/deletespent/{id}")
+    public void deletespent(@PathVariable Long id) {
+        System.out.println("delete spent " + id);
+        spentservice.deleteSpentById(id);
     }
 
 }
