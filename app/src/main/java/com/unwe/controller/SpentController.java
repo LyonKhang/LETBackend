@@ -30,21 +30,18 @@ public class SpentController {
         return spentservice.saveSpent(stk);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/getspents")
     public List<Spent> getSpent() {
         System.out.println("get spent");
         return spentservice.fetchSpent();
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PutMapping("/editspent")
     public Spent editspent(@RequestBody Spent stk) {
         System.out.println("edit spent " + stk.getLocation());
         return spentservice.updateSpent(stk);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @DeleteMapping("/deletespent/{id}")
     public void deletespent(@PathVariable Long id) {
         System.out.println("delete spent " + id);
