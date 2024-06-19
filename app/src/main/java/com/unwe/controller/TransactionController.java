@@ -29,21 +29,21 @@ public class TransactionController {
         return transactionservice.saveTransaction(tsn);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @CrossOrigin(origins = "http://localhost:3000/")
     @GetMapping("/gettransactions")
     public List<Transaction> getTransaction() {
         System.out.println("get transaction");
         return transactionservice.fetchTransaction();
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @CrossOrigin(origins = "http://localhost:3000/")
     @PutMapping("/edittransaction")
     public Transaction edittransaction(@RequestBody Transaction tsn) {
         System.out.println("edit transaction " + tsn.getAmountEnter());
         return transactionservice.updateTransaction(tsn);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/deletetransaction/{id}")
     public void deletetransaction(@PathVariable Long id) {
         System.out.println("delete transaction " + id);

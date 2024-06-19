@@ -29,21 +29,18 @@ public class CompanyController {
         return companyservice.saveCompany(cpy);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/getcompanys")
     public List<Company> getCompany() {
         System.out.println("get company");
         return companyservice.fetchCompany();
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PutMapping("/editcompany")
     public Company editcompany(@RequestBody Company cpy) {
         System.out.println("edit company " + cpy.getEmail());
         return companyservice.updateCompany(cpy);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @DeleteMapping("/deletecompany/{id}")
     public void deletecompany(@PathVariable Long id) {
         System.out.println("delete company " + id);
