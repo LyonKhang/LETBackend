@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.unwe.entities.Balance;
 import com.unwe.entities.Transaction;
 import com.unwe.repositories.BalanceRepository;
 import com.unwe.repositories.TransactionRepository;
