@@ -7,12 +7,15 @@ import org.springframework.stereotype.Service;
 
 import com.unwe.entities.Transaction;
 import com.unwe.repositories.BalanceRepository;
+import com.unwe.repositories.SpentRepository;
 import com.unwe.repositories.TransactionRepository;
 
 @Service
 public class BalanceService {
+    // @Autowired
+    // private BalanceRepository balancerepository;
     @Autowired
-    private BalanceRepository balancerepository;
+    private SpentRepository spentrepository;
     @Autowired
     private TransactionRepository transactionrepository;
 
@@ -29,5 +32,12 @@ public class BalanceService {
             totalBalance += transaction.getAmountEnter();
         }
         return totalBalance;
+    }
+
+    // TODO: create a get bv location
+    public double getLocationbyOption() {
+
+        return balance;
+
     }
 }
