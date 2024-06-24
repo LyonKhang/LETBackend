@@ -30,7 +30,7 @@ public class Transaction {
     @JsonFormat(pattern = "MM-dd-yyyy")
     private LocalDate exchangeDate;
     @OneToOne(cascade = CascadeType.ALL)
-    private Company company;
+    private Selection selection;
     @OneToOne(cascade = CascadeType.ALL)
     private Spent spent;
 }

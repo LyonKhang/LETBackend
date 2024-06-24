@@ -13,37 +13,37 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unwe.entities.Company;
-import com.unwe.services.CompanyService;
+import com.unwe.entities.Selection;
+import com.unwe.services.SelectionService;
 
 @RestController
 @RequestMapping("/companys")
-public class CompanyController {
+public class SelectionController {
     @Autowired
-    private CompanyService companyservice;
+    private SelectionService companyservice;
 
     @PostMapping(value = "/newcompanys")
     @CrossOrigin
-    public Company addCompany(@RequestBody Company cpy) {
-        System.out.println("new company " + cpy.getCompanyname());
+    public Selection addCompany(@RequestBody Selection cpy) {
+        System.out.println("new selection " + cpy.getCategory());
         return companyservice.saveCompany(cpy);
     }
 
     @GetMapping("/getcompanys")
-    public List<Company> getCompany() {
-        System.out.println("get company");
+    public List<Selection> getCompany() {
+        System.out.println("get selection");
         return companyservice.fetchCompany();
     }
 
     @PutMapping("/editcompany")
-    public Company editcompany(@RequestBody Company cpy) {
-        System.out.println("edit company " + cpy.getEmail());
+    public Selection editcompany(@RequestBody Selection cpy) {
+        System.out.println("edit selection " + cpy.getPayment());
         return companyservice.updateCompany(cpy);
     }
 
     @DeleteMapping("/deletecompany/{id}")
     public void deletecompany(@PathVariable Long id) {
-        System.out.println("delete company " + id);
+        System.out.println("delete selection " + id);
         companyservice.deleteCompanyById(id);
     }
 }
