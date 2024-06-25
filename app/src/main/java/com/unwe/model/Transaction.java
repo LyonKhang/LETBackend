@@ -1,4 +1,4 @@
-package com.unwe.entities;
+package com.unwe.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
@@ -25,9 +25,10 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
+    @NotBlank(message = "please provide a short description")
     @Size(max = 50)
     private String textTitle;
+    @NotBlank
     private double amountEnter;
     @JsonFormat(pattern = "MM-dd-yyyy")
     private LocalDate exchangeDate;

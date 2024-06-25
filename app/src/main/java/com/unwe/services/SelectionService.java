@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.unwe.entities.Selection;
+import com.unwe.model.Selection;
 import com.unwe.repositories.SelectionRepository;
 
 @Service

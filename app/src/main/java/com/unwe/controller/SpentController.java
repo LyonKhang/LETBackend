@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unwe.entities.Spent;
+import com.unwe.model.Spent;
 import com.unwe.services.SpentService;
 
 @RestController

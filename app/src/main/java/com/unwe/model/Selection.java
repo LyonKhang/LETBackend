@@ -1,4 +1,4 @@
-package com.unwe.entities;
+package com.unwe.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
