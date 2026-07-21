@@ -1,7 +1,8 @@
 package com.unwe.entities;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -30,7 +31,7 @@ public class Transaction {
     @JsonFormat(pattern = "MM-dd-yyyy")
     private LocalDate exchangeDate;
     @OneToOne(cascade = CascadeType.ALL)
-    private Company company;
+    private Selection selection;
     @OneToOne(cascade = CascadeType.ALL)
     private Spent spent;
 }

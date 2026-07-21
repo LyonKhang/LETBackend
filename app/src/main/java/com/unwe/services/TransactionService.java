@@ -2,6 +2,7 @@ package com.unwe.services;
 
 import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,7 @@ public class TransactionService {
         tem.setTextTitle(tsn.getTextTitle());
         tem.setAmountEnter(tsn.getAmountEnter());
         tem.setExchangeDate(tsn.getExchangeDate());
-        tem.setCompany(tsn.getCompany());
+        tem.setSelection(tsn.getSelection());
         tem.setSpent(tsn.getSpent());
         return transactionRepository.save(tsn);
     }
