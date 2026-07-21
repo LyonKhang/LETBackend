@@ -1,3 +1,7 @@
 app/target/
 .env
+.mvnw
+.mvnw.cmd
+.vscode/
+./mvm
 
